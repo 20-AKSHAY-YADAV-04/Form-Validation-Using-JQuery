@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Form Validation</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="validation.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="JQueryValidate.js"></script> -->
+
+</head>
+
+<body>
+    <div class="container p-0 mt-4">
+        <h2 class="text-center text-uppercase fw-bold text-danger">JQuery Form Validation Task</h2>
+        <div class="row p-2 formContent">
+            <form class="mt-3 form" id="form" name="isForm">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3 form-control">
+                            <label for="FirstName" class="form-label">First Name<span class="fieldRequired">*</span></label>
+                            <small id="firstNameError"></small>
+                            <input autocomplete="off" type="text" class="form-control" id="FirstName" placeholder="Enter the First Name Here...">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3 form-control">
+                            <label for="LastName" class="form-label">Last Name<span class="fieldRequired">*</span></label>
+                            <small id="lastNameError"></small>
+                            <input autocomplete="off" type="text" class="form-control" id="LastName" placeholder="Enter the Last Name Here...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3 form-control">
+                            <label for="EmailAddress" class="form-label">Email Address<span class="fieldRequired">*</span></label>
+                            <small id="emailAddressError"></small>
+                            <input autocomplete="off" type="email" class="form-control" id="EmailAddress" aria-describedby="emailHelp" placeholder="youremailaddress@gmail.com">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3 form-control">
+                            <label for="MobileNumber" class="form-label">Mobile or Phone Number<span class="fieldRequired"> *</span></label>
+                            <small id="mobileNumberError"></small>
+                            <input autocomplete="off" type="number" class="form-control" id="MobileNumber" placeholder="Enter the Mobile or Phone Number Here...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="mb-3 form-control">
+                            <label for="Qualification" class="form-label">Qualifications<span class="fieldRequired">*</span></label>
+                            <small id="qualificationError"></small>
+                            <select class="form-select btn-sm" aria-label="Default select example" id="Qualification">
+                                <option selected>Select Qualification</option>
+                                <option value="M. C. A.">M. C. A.</option>
+                                <option value="Master of Arts">Master of Arts</option>
+                                <option value="Master of Science">Master of Science</option>
+                                <option value="Master of Research">Master of Research</option>
+                                <option value="Master of Studies">Master of Studies</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3 form-control">
+                            <label for="GMale" class="form-label">Select Gender<span class="fieldRequired">*</span></label>
+                            <div id="selectGender" class="d-flex flex-wrap justify-content-start gap-2 align-items-center">
+                                <div class="form-check">
+                                    <input value="Male" class="form-check-input" type="radio" name="gender" id="GMale" checked>
+                                    <label class="form-check-label" for="GMale">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="Female" class="form-check-input" type="radio" name="gender" id="GFemale">
+                                    <label class="form-check-label" for="GFemale">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3 form-control">
+                            <label for="checkHobbies" class="form-label">Select Hobbies<span class="fieldRequired">*</span></label>
+                            <small id="hobbiesError"></small>
+                            <div id="checkHobbies" class="d-flex flex-wrap justify-content-start gap-3 align-items-center">
+                                <div class="form-check">
+                                    <input value="Cricket" class="form-check-input chkHobbies" type="checkbox" id="textHobbies1" name="Hobbies">
+                                    <label class="form-check-label" for="textHobbies1">Cricket</label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="Reading" class="form-check-input chkHobbies" type="checkbox" id="textHobbies2" name="Hobbies">
+                                    <label class="form-check-label" for="textHobbies2">Reading</label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="Music" class="form-check-input chkHobbies" type="checkbox" id="textHobbies3" name="Hobbies">
+                                    <label class="form-check-label fw-bold" for="textHobbies3">Music</label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="Swimming" class="form-check-input chkHobbies" type="checkbox" id="textHobbies4" name="Hobbies">
+                                    <label class="form-check-label" for="textHobbies4">Swimming</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-1 form-control">
+                    <label for="CommentBox" class="form-label">Comment<span class="fieldRequired"> *</span></label>
+                    <small id="commentError"></small>
+                    <textarea autocomplete="off" type="text" class="form-control" id="CommentBox" placeholder="Enter the Comment Here..."></textarea>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-success" id="btnSubmit">Submit Data or Save Data</button>
+                <!-- <div class="d-flex flex-wrap justify-content-around align-items-center gap-4"> -->
+                    <!-- <button type="submit" class="btn btn-danger" id="btnRemove">Remove Data or Delete Data</button> -->
+                <!-- </div> -->
+            </form>
+        </div>
+        <!-- <div class="row p-3 mt-3 mb-3 formContent">
+            <table class="table table-dark table-striped table-responsive table-warning">
+                <thead>
+                    <tr class="text-center fw-bold rounded-3">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
+                        <th>Mobile No</th>
+                        <th>Qualification</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody  id="showData">
+                    <tr class="text-center rounded-3">
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+    
+    <script src="JQuery.js"></script>
+    <script src="validation.js"></script>
+</body>
+</html>
